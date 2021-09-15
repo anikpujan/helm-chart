@@ -18,12 +18,12 @@ Create the Helm chart repository index
 ```
 helm repo index --url https://anikpujan.github.io/helm-chart/ .
 ```
-#Step 4
+# Step 4
 Push to github repo
 ```
 git add . && git commit -m “Initial commit” && git push origin main
 ```
-#Step 5
+# Step 5
 Go back to your browser, in the “settings” section of your git repository, scroll down to Github Pages section and go to "Source" and choose the branch your repo is in.
 Now you will see your site in which you can use to share with others. You can use the follwing command to see the repo in action:
 ```
