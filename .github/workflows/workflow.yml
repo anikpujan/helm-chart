@@ -3,7 +3,7 @@ name: Helm Publish
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   build:
@@ -11,5 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: anikpujan/helm-chart@main
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+        
