@@ -1,25 +1,15 @@
-name: Release Charts
-
+name: release
 on:
   push:
-    branches:
-      - main
+    tags: '*'
+      
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Publish Helm charts
+        uses: anikpujan/helm-gh-pages@main
         with:
-          fetch-depth: 0
-
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.1.0
-        env:
-          CR_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
