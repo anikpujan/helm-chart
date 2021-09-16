@@ -1,14 +1,15 @@
-name: release
+name: Helm Publish
+
 on:
   push:
-    tags: '*'
+    branches:
+      - gh-pages
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Publish Helm charts
-        uses: anikpujan/helm-chart@master
+      - uses: actions/checkout@v1
+      - uses: anikpujan/helm-chart@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
