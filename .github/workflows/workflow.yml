@@ -12,3 +12,4 @@ jobs:
         uses: anikpujan/helm-chart@main
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
+          charts_dir: test-chart
