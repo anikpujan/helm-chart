@@ -9,9 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Helm charts
-        uses: anikpujan/helm-chart@main 
+        uses: anikpujan/helm-chart@main
         with:
           charts_dir: test-chart
           access-token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
           
 
