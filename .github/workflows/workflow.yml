@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Publish Helm charts
         uses: anikpujan/helm-chart@master
-#         with:
-#           token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
