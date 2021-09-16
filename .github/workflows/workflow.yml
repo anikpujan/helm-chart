@@ -2,10 +2,7 @@ name: test
 
 on:
   push:
-    branches:
-    - 'main'
-    - 'gh-pages'
-
+    branches: gh-pages
 jobs:
   release:
     runs-on: ubuntu-latest
